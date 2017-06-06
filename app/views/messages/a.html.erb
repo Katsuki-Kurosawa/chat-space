@@ -1,0 +1,90 @@
+<div class="layout-notification">
+      <div class='chat'>
+<div class='chat-side'>
+<div class='chat-user clearfix'>
+<h5>kurokuro</h5>
+<div class='chat-user__actions'>
+<a class='chat-user__action' href='/chat_groups/new'>
+<i class='fa fa-pencil-square-o'></i>
+</a>
+<a class='chat-user__action' href='/users/edit'>
+<i class='fa fa-cog'></i>
+</a>
+</div>
+</div>
+<ul class='chat-groups'>
+<li class='chat-group'>
+<a class='chat-group__link' href='/chat_groups/16102/messages'>
+<p class='chat-group__name'>test</p>
+<p class='chat-group__message'>
+まだメッセージはありません。
+</p>
+</a>
+</li>
+<li class='chat-group'>
+<a class='chat-group__link' href='/chat_groups/16122/messages'>
+<p class='chat-group__name'>test</p>
+<p class='chat-group__message'>
+iibe
+</p>
+</a>
+</li>
+<li class='chat-group'>
+<a class='chat-group__link' href='/chat_groups/16142/messages'>
+<p class='chat-group__name'>test</p>
+<p class='chat-group__message'>
+まだメッセージはありません。
+</p>
+</a>
+</li>
+</ul>
+
+</div>
+<div class='chat-main'>
+<div class='chat-header clearfix'>
+<div class='chat-header--left'>
+<h2>test</h2>
+<p class='chat-header__users'>
+Members:
+<span class='chat-header__user'>kurokuro</span>
+</p>
+</div>
+<div class='chat-header--right'>
+<a class='chat-header__edit-btn' href='/chat_groups/16122/edit'>Edit</a>
+</div>
+</div>
+<div class='chat-body'>
+<ul class='chat-messages'>
+<li class='chat-message'>
+<div class='chat-message__header clearfix'>
+<p class='chat-message__name'>
+kurokuro
+</p>
+<p class='chat-message__time'>
+2017/06/06 05:00:17
+</p>
+</div>
+<p class='chat-message__body'>
+iibe
+</p>
+</li>
+</ul>
+</div>
+<div class='chat-footer'>
+<form class="new_message" id="new_message" enctype="multipart/form-data" action="/chat_groups/16122/messages" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="UgWLbSNbPkDqaBAfA3kl/1F/ied/g8V65ygaXBBVC7Ej9FXRZQ+43MKjGBHG3Fe2GcqM4NSOztJROvCnGgPp5g==" /><div class='chat-footer__body'>
+<textarea row="1" placeholder="type a message" name="message[body]" id="message_body">
+</textarea>
+<label class='chat-footer__file'>
+<input type="file" name="message[image]" id="message_image" />
+<i class='fa fa-image'></i>
+</label>
+</div>
+<input type="submit" name="commit" value="Send" data-disable-with="Send" />
+</form>
+</div>
+</div>
+</div>
+
+    </div>
+  </body>
+</html>
