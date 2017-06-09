@@ -12,9 +12,9 @@ class UsersController < ApplicationController
 
     if current_user.id == @user.id
       @user.update_attributes(user_params)
-      render template: "messages/index"
+      redirect_to root_path
     else
-      render action: :edit
+      render :edit
     end
   end
 
