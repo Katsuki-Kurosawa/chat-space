@@ -1,0 +1,46 @@
+.chat
+  .chat-side
+    .chat-user.clearfix
+      %h5 kurokuro
+      .chat-user__actions
+        %a.chat-user__action{:href => "/chat_groups/new"}
+          %i.fa.fa-pencil-square-o
+        %a.chat-user__action{:href => "/users/#{(current_user.id)}/edit"}
+          %i.fa.fa-cog
+    %ul.chat-groups
+      %li.chat-group
+        %a.chat-group__link{:href => "/chat_groups/16102/messages"}
+          %p.chat-group__name test
+          %p.chat-group__message
+            まだメッセージはありません。
+  .chat-main
+    .chat-header.clearfix
+      .chat-header--left
+        %h2 test
+        %p.chat-header__users
+          Members:
+          %span.chat-header__user kurokuro
+      .chat-header--right
+        %a.chat-header__edit-btn{:href => "/chat_groups/16122/edit"} Edit
+    .chat-body
+      %ul.chat-messages
+        %li.chat-message
+          .chat-message__header.clearfix
+            %p.chat-message__name
+              kurokuro
+            %p.chat-message__time
+              2017/06/06 05:00:17
+          %p.chat-message__body
+            hello
+    .chat-footer
+      %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/chat_groups/16122/messages", :enctype => "multipart/form-data", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => "UgWLbSNbPkDqaBAfA3kl/1F/ied/g8V65ygaXBBVC7Ej9FXRZQ+43MKjGBHG3Fe2GcqM4NSOztJROvCnGgPp5g=="}/
+        .chat-footer__body
+          %textarea#message_body{:name => "message[body]", :placeholder => "type a message", :row => "1"}
+            :preserve
+              
+          %label.chat-footer__file
+            %input#message_image{:name => "message[image]", :type => "file"}/
+            %i.fa.fa-image
+        %input{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
