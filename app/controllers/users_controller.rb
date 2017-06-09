@@ -2,19 +2,19 @@ class UsersController < ApplicationController
 
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find(current_user)
   end
 
 
   def update
 
-    @user = User.find(current_user.id)
+    @user = User.find(current_user)
 
     if current_user.id == @user.id
       @user.update_attributes(user_params)
-      redirect_to root_path
+      render template: "messages/index"
     else
-      redirect_to edit_user_path
+      render action: :edit
     end
   end
 

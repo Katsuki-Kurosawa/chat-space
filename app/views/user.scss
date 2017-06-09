@@ -1,3 +1,7 @@
+$BaseColor01: #38aef0;
+$BaseColor02: #d65f4c;
+
+
 .account-page {
   .account-page__inner {
     width: 980px;
@@ -86,13 +90,13 @@
     float: left;
     margin-top: 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color:$BaseColor01;
   }
 
   .field-label {
     .field_with_errors {
       display: inline-block;
-      color: #d65f4c;
+      color: $BaseColor02;
       font-weight: 400;
     }
   }
@@ -109,7 +113,7 @@
         right: 0;
         bottom: 0;
         width: 5px;
-        background-color: #d65f4c;
+        background-color: $BaseColor02;
       }
     }
   }
@@ -123,7 +127,7 @@
 
   h2 {
     margin-bottom: 10px;
-    color: #d65f4c;
+    color: $BaseColor02;
     font-size: 14px;
   }
 
