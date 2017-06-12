@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- before_action :edit
+ before_action :user_update
 
  def edit
   user_update
