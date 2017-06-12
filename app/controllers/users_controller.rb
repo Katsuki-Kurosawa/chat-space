@@ -21,8 +21,9 @@ private
 def user_params
   params.require(:user).permit(:name, :email)
 end
-end
 
 def user_update
   @user = User.find(current_user)
+end
+
 end
