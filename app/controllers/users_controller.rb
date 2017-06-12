@@ -1,28 +1,24 @@
 class UsersController < ApplicationController
- before_action :user_update
+ before_action :user_set
 
  def edit
-  user_update
-end
+ end
 
-
-def update
- user_update
- if current_user.id == @user.id
-  @user.update_attributes(user_params)
-  redirect_to root_path
-else
-  render :edit
+ def update
+   if current_user.id == @user.id
+    @user.update_attributes(user_params)
+    redirect_to root_path
+  else
+    render :user_set
+  end
 end
-end
-
 
 private
 def user_params
   params.require(:user).permit(:name, :email)
 end
 
-def user_update
+def user_set
   @user = User.find(current_user)
 end
 
