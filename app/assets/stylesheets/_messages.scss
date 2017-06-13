@@ -5,12 +5,11 @@
     padding-bottom:4px;
     padding-top: 5px;
     letter-spacing: 2px;
-
 }
 
 .chat__user{
- clear: both;
- position:relative;
+   clear: both;
+   position:relative;
 }
 
 .chat-user__action{
@@ -47,7 +46,7 @@
     background-color:#2f3e51;
     color: #FFFFFF;
     width: 280px;
-    height: 676px;
+    height: 703px;
     padding-left: 20px;
 }
 
@@ -76,13 +75,10 @@
 
 .chat-main__group{
     height:100px;
-
 }
 
-
-
 .chat{
- float:left;
+   float:left;
 }
 
 .chat-main__group{
@@ -118,7 +114,7 @@
 .chat-content{
     padding-left:340px;
     background-color:#FAFAFA;
-    height:582px;
+    height:609px;
 }
 
 .chat-content__users{
@@ -169,7 +165,6 @@
 
 .chat-footer__file input {
     display: none;
-
 }
 
 .text{
@@ -177,8 +172,7 @@
 }
 
 .chat-footer__file{
- position: absolute;
- top: 33px;
- right: 166px;
+   position: absolute;
+   top: 33px;
+   right: 166px;
 }
-
