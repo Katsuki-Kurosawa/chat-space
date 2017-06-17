@@ -8,7 +8,9 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     if @group.save
       redirect_to root_path, notice: "グループを作成しました"
-    else render :new
+    else
+      flash[:alert] = "グループ名を入力してください"
+      render :new
     end
   end
 
@@ -19,12 +21,14 @@ class GroupsController < ApplicationController
   def update   #グループ、メンバーの修正の更新
     @group = Group.find(params[:id])
     if @group.update(group_params)
-      redirect_to root_path
-    else render :edit
-    end
-  end
+      redirect_to root_path, notice: "グループ名の編集が完了しました"
+    else
+     flash[:alert] = "グループ名を入力してください"
+     render :edit
+   end
+ end
 
-  def group_params
+ def group_params
    params.require(:group).permit(:name, :user_ids =>[])
  end
 
