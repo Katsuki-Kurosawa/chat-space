@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_action :group_set ,except: [:new,:create]
+  before_action :group_set, except: [:new, :create]
 
   def  new   #グループ、メンバーの作成
     @group = Group.new
