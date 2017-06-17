@@ -1,7 +1,7 @@
 .chat
   .chat__user
     %p.name kurosawa
-    = link_to root_path, :method => :get ,  :method => :get , class: "chat-user__action" do
+    = link_to new_group_path, :method => :get , class: "chat-user__action" do
       %i.fa.fa-pencil-square-o
     = link_to edit_user_path(current_user), :method => :get , class: "chat-user__actions" do
       %i.fa.fa-cog
@@ -13,7 +13,7 @@
 .chat-main
   .chat-main__group
     %h2 test
-    %input.edit{:type => "submit", :value => "Edit"}/
+    %input.edit{:onclick => "window.open('/groups/\#{@group.id}/edit')", :type => "submit", :value => "Edit"}/
     %p.chat-main__users
       Members:
       %span.chat-main__user kurosawa
