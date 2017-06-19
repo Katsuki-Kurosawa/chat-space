@@ -1,9 +1,18 @@
 class GroupsController < ApplicationController
 
-  before_action :group_set, except: [:new, :create]
+  before_action :group_set, except: [:index, :new, :show, :create]
+
+  def index
+   @groups = current_user.groups
+ end
 
   def  new   #グループ、メンバーの作成
     @group = Group.new
+  end
+
+  def show
+    @groups = current_user.groups
+    @group = Group.find(params[:id])
   end
 
   def create   #グループ、メンバーの保存
