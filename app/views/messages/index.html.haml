@@ -1,34 +1,8 @@
 .chat
   .chat__user
-    %p.name kurosawa
-    = link_to new_group_path, :method => :get, class: "chat-user__action" do
+    %p.name=  current_user.name
+    = link_to new_group_path, class: "chat-user__action" do
       %i.fa.fa-pencil-square-o
-    = link_to edit_user_path(current_user), :method => :get, class: "chat-user__actions" do
+    = link_to edit_user_path(current_user), class: "chat-user__actions" do
       %i.fa.fa-cog
-  .chat__group
-    - @groups.each do |group|
-      %p.chat__group__name
-        = group.name
-      %p.chat__group__mmessage まだメッセージはありません。
-.chat-main
-  .chat-main__group
-    %h2 test
-    -# ↓のリンクはメッセージ送信機能実装の際に修正
-    = button_to 'Edit', '/groups/1/edit', method: :get, class:"edit"
-    %p.chat-main__users
-      Members:
-      %span.chat-main__user kurosawa
-  .chat-content
-    %p.chat-content__users
-      kurosawa
-      %span.chat-content__time 2016/01/01 08:09:33
-    %p.chat-content__message
-      hello
-  .chat-content__fotter
-    .text
-      %textarea.texts{:name => "text", :placeholder => "type a message", :rows => "1"}
-      .test
-        %label.chat-footer__file
-          %input#message_image{:name => "message[image]", :type => "file"}/
-          %i.fa.fa-image
-      %input.sent{:type => "submit", :value => "Send"}/
+  = render partial: "sidebar"

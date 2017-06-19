@@ -45,9 +45,22 @@
 .chat__group{
     background-color:#2f3e51;
     color: #FFFFFF;
-    width: 280px;
+    width: 300px;
     height: 703px;
-    padding-left: 20px;
+}
+
+.chat__group__link{
+    transition:all 1s;
+     padding-left: 20px;
+}
+
+.chat__group__link:hover{
+    background-color:#435162;
+}
+
+.chat__group__links{
+    text-decoration: none;
+    color:white;
 }
 
 .chat__group__name{
@@ -58,8 +71,8 @@
 }
 
 .chat__group__mmessage{
-    font-size:11px;
-    padding-bottom: 40px
+    font-size: 11px;
+    padding-bottom: 20px
 }
 
 .chat__group__name__add{
@@ -69,8 +82,8 @@
 }
 
 .chat__group__mmessage__add{
-    font-size:11px;
-    padding-bottom: 40px
+    font-size: 11px;
+    padding-bottom: 40px;
 }
 
 .chat-main__group{
@@ -97,13 +110,17 @@
 }
 
 .edit{
-    height:44px;
-    width:72px;
+    height:40px;
+    width:68px;
     background-color:#FFFFFF;
     color:#38AEF0;
     margin-top:28px;
     border: solid 2px #38AEF0;
     font-size:14px;
+    display: inline-block;
+    text-decoration: none;
+    text-align:center;
+    line-height:40px;
 }
 
 .chat-main__users{
