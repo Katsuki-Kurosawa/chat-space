@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 
- before_action :groups_set
+  before_action :groups_set
 
   def index    #ホーム画面
     @message = Message.new
@@ -16,15 +16,16 @@ class MessagesController < ApplicationController
   end
 end
 
-private
-def message_params
+  private
+
+  def message_params
   params.require(:message).permit(:body, :image).merge(user_id: current_user.id,
     group_id: params[:group_id])
-end
+  end
 
-def groups_set
+  def groups_set
   @groups = current_user.groups
   @group= Group.find(params[:group_id])
-end
+  end
 
 end
