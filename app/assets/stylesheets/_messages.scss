@@ -163,7 +163,6 @@
     resize: none;
     font-size:16px;
     line-height:50px;
-
 }
 
 .sent{
@@ -175,12 +174,11 @@
     border:none;
 }
 
-.text textarea{
+.texts{
     padding-left:10px;
-
 }
 
-.chat-footer__file input {
+.chat-footer__files {
     display: none;
 }
 
@@ -190,6 +188,6 @@
 
 .chat-footer__file{
    position: absolute;
-   top: 33px;
-   right: 166px;
+   top: 35px;
+   right: 175px;
 }
