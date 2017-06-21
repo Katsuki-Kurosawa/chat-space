@@ -3,8 +3,10 @@ class MessagesController < ApplicationController
   before_action :groups_set
 
   def index    #ホーム画面
-    @message = Message.new
-  end
+   @message = Message.new
+   @group = Group.find(params[:group_id])
+   @messages = @group.messages
+ end
 
   def create   #メッセージ送信、保存
    @message = Message.new(message_params)
@@ -16,16 +18,16 @@ class MessagesController < ApplicationController
   end
 end
 
-  private
+ private
 
-  def message_params
+ def message_params
   params.require(:message).permit(:body, :image).merge(user_id: current_user.id,
     group_id: params[:group_id])
-  end
+ end
 
-  def groups_set
+ def groups_set
   @groups = current_user.groups
   @group= Group.find(params[:group_id])
-  end
+ end
 
 end

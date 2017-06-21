@@ -14,11 +14,14 @@
       Members:
       %span.chat-main__user kurosawa
   .chat-content
-    %p.chat-content__users
-      kurosawa
-      %span.chat-content__time 2016/01/01 08:09:33
-    %p.chat-content__message
-      hello
+    - @messages.each do |m|
+      %p.chat-content__users
+        = m.user.name
+        %span.chat-content__time= m.created_at.strftime("%Y/%m/%d/ %H:%M:%S")
+      %p.chat-content__message
+        = m.body
+      -if m.image?
+        = image_tag m.image, size: "300x200"
   .chat-content__fotter
     .text
       = form_for [@group , @message] do |f|
