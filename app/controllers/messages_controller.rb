@@ -4,7 +4,6 @@ class MessagesController < ApplicationController
 
   def index    #ホーム画面
    @message = Message.new
-   @group = Group.find(params[:group_id])
    @messages = @group.messages
  end
 
