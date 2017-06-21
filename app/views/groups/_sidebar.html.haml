@@ -5,9 +5,4 @@
         %p.chat__group__name
           = group.name
         %p.chat__group__mmessage
-          -if  group.messages.blank?
-            = "新着メッセージはありません"
-          -elsif group.messages.order(created_at: :desc).take.body?
-            = group.messages.order(created_at: :desc).take.body
-          -else group.messages.order(created_at: :desc).take.image?
-            = "画像の送信がされました"
+          = side_message(group)

@@ -13,15 +13,7 @@
     %p.chat-main__users
       Members:
       %span.chat-main__user kurosawa
-  .chat-content
-    - @messages.each do |m|
-      %p.chat-content__users
-        = m.user.name
-        %span.chat-content__time= m.created_at.strftime("%Y/%m/%d/ %H:%M:%S")
-      %p.chat-content__message
-        = m.body
-      -if m.image?
-        = image_tag m.image, size: "300x200"
+  = render "main_message", messages: @messages
   .chat-content__fotter
     .text
       = form_for [@group , @message] do |f|
