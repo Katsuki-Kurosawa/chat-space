@@ -2,11 +2,12 @@ require 'rails_helper'
 
 describe MessagesController  do
 let(:group){ FactoryGirl.create(:group) }
+let(:user){ @user = create(:user) }
+let(:message){ message = Message.new }
 
   describe 'ログインしている時' do
     before do
-      @user = create(:user)
-      sign_in @user
+      sign_in user
     end
 
     describe 'GET #index' do
@@ -42,10 +43,9 @@ let(:group){ FactoryGirl.create(:group) }
       end
 
       context "メッセージが保存できなかった時" do
-        it "メッセージが保存されない" do
-         message = Message.new
-         expect(message.save).to be_falsey
-      end
+       it "メッセージが保存されない" do
+        expect(message.save).to be_falsey
+       end
 
        it "意図したビューにリダイレクトできているか" do
         get :index, params:{group_id: group}
