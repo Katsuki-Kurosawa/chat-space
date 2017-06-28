@@ -3,8 +3,8 @@ class GroupsController < ApplicationController
   before_action :group_set, except: [:index, :new, :show, :create]
 
   def index
-   @groups = current_user.groups
- end
+    @groups = current_user.groups
+  end
 
   def  new   #グループ、メンバーの作成
     @group = Group.new

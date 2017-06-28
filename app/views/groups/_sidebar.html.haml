@@ -1,5 +1,5 @@
 .chat__group
-  - @groups.each do |group|
+  - current_user.groups.each do |group|
     .chat__group__link
       = link_to group_messages_path(group), class: :"chat__group__links"  do
         %p.chat__group__name
