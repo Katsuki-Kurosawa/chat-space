@@ -1,3 +1,4 @@
+.notice
 .chat
   .chat__user
     %p.name=  current_user.name
@@ -16,7 +17,7 @@
   = render "main_message", messages: @messages
   .chat-content__fotter
     .text
-      = form_for [@group , @message] do |f|
+      = form_for [@group , @message], id:'new_message' do |f|
         = f.text_field  :body, placeholder: 'type a message', class: 'texts'
         = f.label :image, class: 'chat-footer__file fa fa-image' do
           = f.file_field :image, class: 'chat-footer__files'
