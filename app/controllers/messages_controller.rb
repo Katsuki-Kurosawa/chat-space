@@ -7,11 +7,15 @@ class MessagesController < ApplicationController
   end
 
   def create   #メッセージ送信、保存
-   @message = Message.create(message_params)
-    respond_to do |format|
-      format.html {redirect_to group_messages_path}
-      format.json
-    end
+   @message = Message.new(message_params)
+   if @message.save
+      respond_to do |format|
+        format.html {redirect_to group_messages_path}
+        format.json
+      end
+   else
+    render :index
+   end
   end
 
 private
