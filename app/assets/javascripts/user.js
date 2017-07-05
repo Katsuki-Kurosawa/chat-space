@@ -29,9 +29,9 @@ $(function() {
 
   $("#user-search-field").on('keyup', function() {
     var input = $("#user-search-field").val();
-    $.ajax('/users.json',{
+    $.ajax({
       type: 'GET',
-      url: window.location.href,
+      url: '/users.json',
       data: { name: input },
       dataType: 'json'
   })

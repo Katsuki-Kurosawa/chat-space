@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.name_is(params[:user])
+    @users = User.name_is(params[:name])
     render json: @users
   end
 
