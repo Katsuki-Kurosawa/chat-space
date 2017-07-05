@@ -21,10 +21,9 @@ $(function() {
 
   $("#user-search-field").on('keyup', function() {
     var input = $("#user-search-field").val();
-    var href = window.location.href
     $.ajax('/users.json',{
       type: 'GET',
-      url: href,
+      url: window.location.href,
       data: { name: input },
       dataType: 'json'
   })
@@ -54,4 +53,5 @@ $(function() {
     var id = $this.data('userId');
     $('#chat-group-user-' + id).remove();
   })
+
 });
