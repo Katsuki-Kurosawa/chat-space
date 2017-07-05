@@ -13,7 +13,8 @@
     = link_to 'Edit', edit_group_path(@group), class: "edit"
     %p.chat-main__users
       Members:
-      %span.chat-main__user kurosawa
+      - @group.users.each do |user|
+        %span.chat-main__user= user.name
   = render "main_message", messages: @messages
   .chat-content__fotter
     .text
