@@ -2,8 +2,12 @@ class MessagesController < ApplicationController
 
   before_action :set_group_messages, only: [:index, :create]
 
-  def index    #ホーム画面
-   @message = Message.new
+  def index
+    @message = Message.new
+     respond_to do |format|
+     format.html
+     format.json { @new_message = @group.messages.where('id > ?', params.require(:message)[:id])}
+    end
   end
 
   def create   #メッセージ送信、保存
@@ -27,7 +31,7 @@ private
 
   def set_group_messages
     @group = Group.find(params[:group_id])
-    @messages = @group.messages.includes(:user)
+    @messages = @group.messages.order(created_at: :ASC).includes(:user)
   end
 
 end
