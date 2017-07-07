@@ -1,9 +1,11 @@
 .chat-content
-  - @messages.each do |m|
-    %p.chat-content__users
-      = m.user.name
-      %span.chat-content__time= m.created_at.strftime("%Y/%m/%d/ %H:%M:%S")
-    %p.chat-content__message
-      = m.body
-    -if m.image?
-      = image_tag m.image, size: "300x200"
+  %ul.chat-messages
+    - @messages.each do |message|
+      %p.messages{"data-id" => message.id}
+      %p.chat-content__users
+        = message.user.name
+        %span.chat-content__time= message.created_at.strftime("%Y/%m/%d/ %H:%M:%S")
+      %p.chat-content__message
+        = message.body
+      -if message.image?
+        = image_tag message.image, size: "300x200"
